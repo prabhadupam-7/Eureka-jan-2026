@@ -1,0 +1,36 @@
+<div class="border border-3 rounded-3 p-3 m-3">
+
+  <h4>Task List</h4>
+
+  <!-- Dropdown -->
+  <div class="mb-3">
+    <label>Select Status:</label>
+    <select class="form-select w-50"
+            [(ngModel)]="selectedFilter">
+      <option value="all">All</option>
+      <option value="completed">Completed</option>
+      <option value="pending">Pending</option>
+    </select>
+  </div>
+
+  <!-- Task List -->
+  @for (task of filteredTasks; track task.id) {
+    <div class="form-check mb-2">
+      
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [checked]="task.completed"
+        (change)="toggleTask(task)"
+      />
+
+      <label
+        class="form-check-label"
+        [style.text-decoration]="task.completed ? 'line-through' : 'none'">
+        {{ task.title }}
+      </label>
+
+    </div>
+  }
+
+</div>

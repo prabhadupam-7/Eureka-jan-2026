@@ -23,6 +23,19 @@ export class Directives {
         { id: 5, name: 'Karan Singh', role: 'Manager', salary: 52000, status: 'Active', gender: 'male' },
         { id: 6, name: 'Neha Gupta', role: 'Tester', salary: 72000, status: 'Active', gender: 'female' }
      ];
+  myStyle1={
+    "color":"red",
+    "font-size":"28px",
+    "border": "5px dotted green"
+  }
+  myStyle2={
+    "color":"orange",
+    "font-size":"28px",
+    "border": "5px dotted blue"
+  }
+  myFunction(){
+    return this.num%2==0 ? this.myStyle1 : this.myStyle2;
+  }
 }
 	
 
