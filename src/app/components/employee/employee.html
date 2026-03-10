@@ -1,0 +1,22 @@
+<p>employee works!</p>
+<div>
+  <div>
+    <select [(ngModel)]="SelectedEmployee">
+      <option>All</option>
+      <option>Male Employees</option>
+      <option>Female Employees</option>
+    </select>
+  </div>
+  <table class="table table-bordered text-center">
+    <tbody>
+      @for(emp of filteringDD; track $index){
+        <tr>
+          <td>{{emp.id}}</td>
+          <td>{{emp.name}}</td>
+          <td>{{emp.department}}</td>
+          <td>{{emp.salary}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

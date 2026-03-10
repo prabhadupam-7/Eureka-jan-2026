@@ -1,0 +1,67 @@
+<p>emp-table works!</p>
+<div class="class border border-2 m-2 p-2">
+  <div>Employee table:</div>
+  <table class="table table-bordered">
+    <tbody>
+      @for (emp of employees; track $index){
+        <tr [ngClass]="{'manager': emp.role === 'Manager',
+      'developer': emp.role === 'Developer',
+      'tester': emp.role === 'Tester'}">
+          <td>{{emp.id}}</td>
+          <td>{{emp.name}}</td>
+          <td>{{emp.role}}</td>
+          <td [ngStyle]="{'color': emp.salary>50000 ? 'green' : 'red'}">{{emp.salary}}</td>
+          <td>{{emp.status}}</td>
+          <td>{{emp.gender}}</td>
+          
+        </tr>
+      }
+    </tbody>
+  </table>
+</div> 
+
+<div class="border border-3 rounded-3 p-3 m-3">
+  <h4 class="text-center mb-3">Assignment 3 </h4>
+  <div>
+  3.Display Array of employees in a table
+   a. Display Salary in green  if salary > 50000, else Display Salary in red, using n/gStyle
+   b. Apply a CSS class "inactive" to employees whose status is "Inactive" using ngClass
+   c. Add bold font and blue color only for employees whose role is "Manager" using ngClass
+   d. Apply a different row background color based on employee role:
+		Manager = lightyellow , Developer = lightblue , Tester = lightpink
+   e. Show salary in a badge style with dynamic color
+      Green if salary > 70,000 , Orange if between 40,000 and 70,000, Red if less than 40,000
+    </div>
+  <div class="row">
+    @for(items of cartItems ; track $index){
+      <div class="col-md-3 mb-3">
+        <div class="card text-center p-3 shadow-sm">
+          <h6 class="fw-bold">{{items.name}}</h6>
+          <p >
+            Price : ${{items.price}}
+          </p>
+          <div>
+            <button 
+                    (click)="decrement(items)"> -
+            </button>
+            <span class="fw-bold">
+              {{items.qty}}
+            </span>
+            <button 
+                    (click)="increment(items)">+
+            </button>
+          </div>
+          <p>
+            Item Total :
+            ${{items.price * items.qty}}
+          </p>
+        </div>
+      </div>
+    }
+  </div>
+  <div >
+    <h5 >
+      Total Price : ${{getTotal()}}
+    </h5>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.manager {
+  background-color: lightyellow; /* Manager row */
+  font-weight: bold;              /* optional */
+  color: blueviolet;              /* optional */
+}
+
+.developer {
+  background-color: lightblue;   /* Developer row */
+}
+
+.tester {
+  background-color: lightpink;   /* Tester row */
+}

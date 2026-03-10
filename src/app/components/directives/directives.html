@@ -79,6 +79,11 @@
 <div class="border border-2 rounded-2 p-2 m-2">
 <div> Ngclass is used to used apply some style conditionally</div>
 <input type="number" [(ngModel)]="num">
-<button [ngClass]="['btn','mx-2' num % 2 ==0 ? 'btn-success' : 'btn-danger']">Click Me</button>
+<button [ngClass]="['btn','mx-2',num%2 ==0 ? 'btn-success' : 'btn-danger']">Click Me</button>
 </div>
 
+<div>
+  <app-my-model>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.xSKy9BBJgWvYGyK532oNCgHaHa?pid=Api&h=220&P=0" alt="">
+  </app-my-model>
+</div>
